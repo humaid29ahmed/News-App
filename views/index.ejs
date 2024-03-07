@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+<h1><strong>World News</strong></h1>
+<br>
+<hr>
+<div class="container main-news">
+    <div class="row">
+    <div class="col-lg-6">
+    <a href = "<%= content[0].url %>" style="text-decoration: none; color: black;"><h1><strong><%= content[0].title %></strong></h1></a>
+    <p><%= content[0].abstract%>..<a href="<%= content[0].url %>">read more</a><p>
+    <p><strong>published by <%= (content[0].byline).slice(3,(content[0].byline).length) %></strong></p>
+    <p><%= moment(content[0].published_date,"YYYY-MM-DD HH:mm:ssZ").fromNow() %></p>
+    </div>
+    <div class="col-lg-6 d-flex justify-content-center">
+    <img src=<%=content[0].multimedia[0].url %> width="600" height="300" alt="Images">
+    </div>
+    </div>
+</div>
+<div class="container py-5 search-div">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2><strong>You can now search your news of your interest using New York Times Search API which provides you the relevant information that you want.</strong></h2>
+            <br>
+            <br>
+            <form action="" method="post">
+                <input id="delete" class="btn btn-primary" type="submit" value="Click here" formaction="/search">
+            </form>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <% for(let i=2 ; i<=12 ; i=i+2) { %>
+    <div class="row arrange">
+        <div class="col-lg-6 other-news" >
+            <div class="row">
+             <div class="col-sm-6">
+                <a href = "<%= content[i-1].url %>" style="text-decoration: none; color: black;"> <h3><strong><%= content[i-1].title %></strong></h3></a>
+                 <p><%= content[i-1].abstract%>..<a href="<%= content[i-1].url %>">read more</a><p>
+                 <p><strong>published by <%= (content[i-1].byline).slice(3,(content[i-1].byline).length) %></strong></p>
+                 <p><%= moment(content[i-1].published_date,"YYYY-MM-DD HH:mm:ssZ").fromNow() %></p>
+             </div>
+             <div class="col-sm-6 d-flex justify-content-center">
+                 <img src=<%=content[i-1].multimedia[0].url %> width="300" height="400" alt="Images">
+             </div>
+            </div>
+        </div>
+        <div class="col-lg-6 other-news">
+            <div class="row">
+             <div class="col-sm-6">
+                <a href = "<%= content[i].url %>" style="text-decoration: none; color: black;"><h3><strong><%= content[i].title %></strong></h3></a>
+                 <p><%= content[i].abstract%>..<a href="<%= content[i].url %>">read more</a><p>
+                 <p><strong>published by <%= (content[i].byline).slice(3,(content[i].byline).length) %></strong></p>
+                 <p><%= moment(content[i].published_date,"YYYY-MM-DD HH:mm:ssZ").fromNow() %></p>
+             </div>
+             <div class="col-sm-6 d-flex justify-content-center">
+                 <img src=<%=content[i].multimedia[0].url %> width="300" height="400" alt="Images">
+             </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
