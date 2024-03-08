@@ -6,7 +6,7 @@ import moment from "moment"; // This npm package is used for display the duratio
 // This server uses New York Times Public API for displaying the data .
 
 const app = express();
-const port = 3001;
+const port = 3000;
 const API_URL = 'https://api.nytimes.com/svc/topstories/v2/'; // This url is used to hit the endpoint of world news API.
 const api_url = 'https://api.nytimes.com/svc/search/v2/';  // This url is used to hit the endpoint of search API.
 const API_KEY = "2hbGCkPqPE60yGjYA7SYOvPwdhMIYoAn" ;    
