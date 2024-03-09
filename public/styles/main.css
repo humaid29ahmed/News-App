@@ -27,12 +27,12 @@ label,p{
     width: 600px;
     height: 300px;
 }
-@media(max-width:480px)
+@media(max-width:386px)
 {
     .main-news-image > img {
 
-        width: 380px;
-        height: 300px;
+        width: 300px;
+        height: 150px;
     }
 }
 
