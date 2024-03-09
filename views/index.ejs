@@ -10,8 +10,8 @@
     <p><strong>published by <%= (content[0].byline).slice(3,(content[0].byline).length) %></strong></p>
     <p><%= moment(content[0].published_date,"YYYY-MM-DD HH:mm:ssZ").fromNow() %></p>
     </div>
-    <div class="col-lg-6 d-flex justify-content-center">
-    <img src=<%=content[0].multimedia[0].url %> width="600" height="300" alt="Images">
+    <div class="col-lg-6 d-flex justify-content-center main-news-image">
+    <img src=<%=content[0].multimedia[0].url %>  alt="Images">
     </div>
     </div>
 </div>
